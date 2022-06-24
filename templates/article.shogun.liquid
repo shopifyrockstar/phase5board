@@ -1,0 +1,25 @@
+{% include 'shogun-products', content: article %}
+<div class="page-width">
+  <article itemscope itemtype="http://schema.org/Article" class="grid">
+
+    <div class="grid__item{% if blog.all_tags.size > 0 %} medium-up--three-quarters large-up--four-fifths{% endif %}">
+      {% comment %}
+        The article contents can be found in /sections/article-content.liquid
+      {% endcomment %}
+
+      {% section 'article-content' %}
+
+      {% section 'featured-products-subsection' %}
+
+      
+    </div>
+
+    {% if blog.all_tags.size > 0 %}
+      <div class="grid__item medium-up--one-quarter large-up--one-fifth small--hide">
+       
+      </div>
+    {% endif %}
+
+  </article>
+</div>
+

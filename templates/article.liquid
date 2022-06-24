@@ -1,0 +1,28 @@
+{% include 'shogun-products', content: article %}
+
+<div class="home--hero--blog" style='background-image: url("{{ article.image | img_url: '' }}")'>
+
+</div>
+
+
+<div class="page-width">
+    <article itemscope itemtype="http://schema.org/Article">
+
+  <div class="page-width--lg">
+	  <div class="text-center">
+        
+        <div>
+          {% comment %}The article contents can be found in /sections/article-content.liquid{% endcomment %}
+          
+          {% section 'article-content' %}
+          
+          
+          
+
+        </div>
+
+	  </div>  
+      
+      </div>  
+      </article>
+</div>

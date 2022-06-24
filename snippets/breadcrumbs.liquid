@@ -1,0 +1,51 @@
+{% unless template == 'index' or template == 'cart' or template == 'list-collections' %}
+<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs"> 
+  <a href="/" title="Home">Home</a>
+  
+  {% if template contains 'page' %}
+    <span aria-hidden="true" class="red-text  py-05">/</span>
+    <span>{{ page.title }}</span>
+  
+  {% elsif template contains 'product' %}
+    {% if collection.url %}
+    <span aria-hidden="true" class="red-text  py-05">/</span>
+      {{ collection.title | link_to: collection.url }}
+    {% endif %}
+    <span aria-hidden="true" class="red-text  py-05">/</span>
+    <span class="red-text">{{ product.title }}</span>
+  
+  {% elsif template contains 'collection' and collection.handle %}
+    <span aria-hidden="true" class="red-text py-05">/</span>
+    {% if current_tags %}
+      {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+      {{ collection.title | link_to: url }}
+    <span aria-hidden="true" class="red-text py-05">/</span>
+      {{ current_tags | join: " + " }}
+    {% else %}
+  <span class="red-text">{{ collection.title }}</span>
+    {% endif %}
+  
+  {% elsif template == 'blog' %}
+    <span aria-hidden="true" class="red-text py-05">/</span>
+    {% if current_tags %}
+      {{ blog.title | link_to: blog.url }}
+    <span aria-hidden="true" class="red-text py-05">/</span>
+      {{ current_tags | join: " + " }}
+    {% else %}
+  <span class="red-text">{{ blog.title }}</span>
+    {% endif %}
+  
+  {% elsif template == 'article' %}
+    <span aria-hidden="true" class="red-text py-05">/</span>
+    {{ blog.title | link_to: blog.url }}
+    <span aria-hidden="true" class="red-text py-05">/</span>
+  <span class="red-text">{{ article.title }}</span>
+  
+  {% else %}
+    <span aria-hidden="true" class="red-text py-05">/</span>
+   <span>{{ page_title }}</span>
+  
+  {% endif %}
+  
+</nav>
+{% endunless %}

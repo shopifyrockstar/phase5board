@@ -1,0 +1,58 @@
+{% if page.handle == 'drew-danielo' %}
+
+  {% assign mycollection = 'drew-danielo-collection' %}
+  {% assign sectionTitle = "Drew's Favorites" %}
+
+{% elsif page.handle contains  'parker-payne' %}
+  {% assign mycollection = 'parker-payne-collection' %}
+  {% assign sectionTitle = "Parker's Favorites" %}
+
+{% elsif page.handle contains  'nick-parros' %}
+  {% assign mycollection = 'nick-parros-collection' %}
+  {% assign sectionTitle = "Nicks's Favorites" %}
+
+{% elsif page.handle == 'sean-silveira' %}
+  {% assign mycollection = 'sean-silveira-collection' %}
+  {% assign sectionTitle = "Sean's Favorites" %}
+
+{% elsif page.handle contains  'john-akerman' %}
+  {% assign mycollection = 'john-akerman-collection' %}
+  {% assign sectionTitle = "John's Favorites" %}
+
+{%endif %}
+
+
+{% if mycollection != blank %}
+  {% if mycollection.products_count != 0 %}
+    <hr>
+	<div class="grid__item section-header__item text-center">
+      <h1 class="section-header__title">
+        {{ sectionTitle }}       
+      </h1>
+      <hr class="red">    
+    </div>
+
+    <div class="grid grid--no-gutters grid--uniform">
+      {% for product in collections[mycollection].products limit: 4 %}
+        <div class="grid__item medium-up--one-quarter small--one-half">
+        	{% include 'product-card', product: product, image: variant.featured_image, hc_url: variant.url %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Drew Danielo Collection",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+	    
+        "label": "Drew Danielo Collection"
+      }
+    ]
+  }
+{% endschema %}

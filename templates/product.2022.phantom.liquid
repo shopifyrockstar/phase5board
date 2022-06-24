@@ -1,0 +1,42 @@
+{% render 'shogun-products', content: product %}
+{% include 'shogun-products', content: product %}
+{{product.metafields.shogun.above}}
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+
+{% include 'breadcrumbs', content: product %}
+{% endcomment %}
+
+<div class="top-banner-wrapper">
+  <img class="desktop-show" src="https://cdn.shopify.com/s/files/1/0070/1582/files/hero-phantom.jpg?v=1632929130">  
+  <img class="mobile-show" src="https://cdn.shopify.com/s/files/1/0070/1582/files/hero-mobile-phantom.jpg?v=1632929169">    
+</div>
+
+{% section 'product-template-3' %}
+
+{% section 'recommend-products' %}
+
+
+{% if collection %}
+  <div class="full-width full-width--return-link">
+    <a href="{{ collection.url }}" class="h1 return-link">
+      {% include 'icon-arrow-thin-left' %}
+      {{ 'products.product.collection_return' | t: collection: collection.title }}
+    </a>
+  </div>
+{% endif %}
+
+<script>
+  // Override default values of shop.strings for each template.
+  // Alternate product templates can change values of
+  // add to cart button, sold out, and unavailable states here.
+  window.productStrings = {
+    addToCart: {{ 'products.product.add_to_cart' | t | json }},
+    soldOut: {{ 'products.product.sold_out' | t | json }},
+    unavailable: {{ 'products.product.unavailable' | t | json }}
+  }
+</script>
+
+
+{{product.metafields.shogun.below}}
+

@@ -1,0 +1,218 @@
+{% render 'shogun-products', content: product %}
+{% include 'shogun-products', content: product %}
+{{product.metafields.shogun.above}}
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+{% include 'breadcrumbs', content: product %}
+
+{% section 'product-template-2' %}
+
+{% section 'recommend-products' %}
+
+<script>
+  // Override default values of shop.strings for each template.
+  // Alternate product templates can change values of
+  // add to cart button, sold out, and unavailable states here.
+  window.productStrings = {
+    addToCart: {{ 'products.product.add_to_cart' | t | json }},
+    soldOut: {{ 'products.product.sold_out' | t | json }},
+    unavailable: {{ 'products.product.unavailable' | t | json }}
+  }
+</script>
+
+<div class="additional-content-wrapper">
+  <div class="additional-slider-wrapper">    
+    <div class="additional-slider">
+      <img class="slider-image" src="{{ 'oogle-1-1.png' | asset_img_url:'master' }}">
+      <img class="slider-image" src="{{ 'oogle-1-2.png' | asset_img_url:'master' }}">
+    </div>
+    <div class="additional-slider">
+      <img class="slider-image" src="{{ 'oogle-2-1.png' | asset_img_url:'master' }}">
+      <img class="slider-image" src="{{ 'oogle-2-2.png' | asset_img_url:'master' }}">
+    </div>
+    <div class="additional-slider">
+      <img class="slider-image" src="{{ 'oogle-3-1.png' | asset_img_url:'master' }}">
+      <img class="slider-image" src="{{ 'oogle-3-2.png' | asset_img_url:'master' }}">
+    </div>
+  </div>
+  <div class="additional-details-wrapper">
+    <h1 class="main-title">BOARD DETAILS</h1>
+    <div class="item-list-wrapper">
+      <div class="content-wrapper">
+        <div class="item-left-wrapper item-wrapper">
+          <img src="{{ 'oogle-left.png' | asset_img_url:'master' }}">
+        </div>
+        <div class="item-right-wrapper item-wrapper">
+         {% comment %} {{product.metafields.board_details.right_html}}  {% endcomment %}
+          
+          <img src="{{ 'shrimp-right.png' | asset_img_url:'master' }}">
+          <img src="{{ 'prop-right-2.png' | asset_img_url:'master' }}">
+
+          <p><strong style="box-sizing: border-box; font-weight: 700;"><span style="color: rgb(227, 15, 0);">CONSTRUCTION FEATURES:</span></strong></p><span style="color: rgb(227, 15, 0);">
+
+          </span>
+
+          <p>&bull; E-Glass&trade; Wrap
+            <br style="">&bull; 3/4&rdquo; Thick
+            <br style="">&bull; Composilite&trade; Construction
+            <br style="">&bull; Continuous Core
+            <br style="">&bull; Polyester Resin
+            <br style="">&bull; Single Fin Setup
+            <br style="">&bull; TuffCoat&trade; Gloss
+            <br style="">&bull; Airbrush Art</p>
+
+          <p><strong style="box-sizing: border-box; font-weight: 700;"><span style="color: rgb(227, 15, 0);">FIN SETUP:</span></strong></p>
+
+          <p>&bull; (1) 2&rdquo; Tail Fin</p>
+
+          <p><strong style="box-sizing: border-box; font-weight: 700;"><span style="color: rgb(227, 15, 0);">PAD:</span></strong></p>
+
+          <p>&bull; Standard Skim + P5 Techno Grip&trade; Traction v2</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="additional-specs-wrapper">
+    <h1 class="main-title">BOARD & RIDER SPECS</h1>
+    <div class="table-wrapper">
+      <table class="table">
+        <thead class="table-column-container">
+          <tr>
+            <td class="table-column">
+              LENGTH
+            </td>
+
+            <td class="table-column">
+              WIDTH
+            </td>
+
+            <td class="table-column">
+              THICKNESS
+            </td>
+
+            <td class="table-column">
+              VOLUME
+            </td>
+
+            <td class="table-column">
+              WEIGHT LIMIT
+            </td>
+
+            <td class="table-column">
+              HEIGHT RANGE
+            </td>
+
+            <td class="table-column">
+              SCREWS
+            </td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="table-row-container">
+            <td class="table-row">
+              <div class="shg-c  ">
+                <div class="shg-rich-text shg-theme-text-content">
+
+                  <p style="text-align: center;">58&quot;</p>
+                </div>
+
+              </div>
+
+            </td>
+
+            <td class="table-row">
+              <div class="shg-c  ">
+                <div class="shg-rich-text shg-theme-text-content">
+
+                  <p style="text-align: center;">20.75&quot;</p>
+                </div>
+
+              </div>
+
+            </td>
+
+            <td class="table-row">
+              <div class="shg-c  ">
+                <div class="shg-rich-text shg-theme-text-content">
+
+                  <p style="text-align: center;">3/4&quot;</p>
+                </div>
+
+              </div>
+
+            </td>
+
+            <td class="table-row">
+              <div class="shg-c  ">
+                <div class="shg-rich-text shg-theme-text-content">
+
+                  <p style="text-align: center;">12L</p>
+                </div>
+
+              </div>
+
+            </td>
+
+            <td class="table-row">
+              <div class="shg-c  ">
+                <div class="shg-rich-text shg-theme-text-content">
+
+                  <p style="text-align: center;">235 lbs.</p>
+                </div>
+
+              </div>
+
+            </td>
+
+            <td class="table-row">
+              <div class="shg-c  ">
+                <div class="shg-rich-text shg-theme-text-content">
+
+                  <p style="text-align: center;">5'8" – 6'5"</p>
+                </div>
+
+              </div>
+
+            </td>
+
+            <td class="table-row">
+              <div class="shg-c  ">
+                <div class="shg-rich-text shg-theme-text-content">
+
+                  <p style="text-align: center;">1.25&quot;</p>
+                </div>
+
+              </div>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="additional-overview-wrapper">
+    <h1 class="main-title">BOARD OVERVIEW</h1>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/rr897bGpktM?autoplay=1&loop=1&mute=1" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="additional-shrimp-wrapper">
+    <h1 class="main-title">#P5OOGLE</h1>
+    <div class="instafeed-text-wrapper">
+      <p style="text-align: center;">Follow us on Instagram <a href="https://www.instagram.com/phase5wakesurfers/" rel="noopener" target="_blank">@phase5wakesurfers</a> and tag your posts riding your Phase 5 Board to be featured!</p>
+    </div>    
+    <covet-pics-widget gallery-embed-id="67168"></covet-pics-widget>
+  </div>
+</div>
+
+{% if collection %}
+  <div class="full-width full-width--return-link">
+    <a href="{{ collection.url }}" class="h1 return-link">
+      {% include 'icon-arrow-thin-left' %}
+      {{ 'products.product.collection_return' | t: collection: collection.title }}
+    </a>
+  </div>
+{% endif %}

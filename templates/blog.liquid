@@ -1,0 +1,83 @@
+{% paginate blog.articles by 11 %}
+
+{% for article in blog.articles limit:1 %}
+<div class="home--hero--blog" style='background-image: url("{{ article.image | img_url: '' }}")'>
+<div class="overlay">
+<div class="blog-hero-content text-center">
+	<h1 class="barlow text-center "><a href="{{ article.url }}" style="color:#FFFFFF;">{{ article.title }}</a></h1>
+	<div class="text-center"><a class="btn btn--blue" href="{{ article.url }}">Read More</a></div>
+</div>
+
+</div>
+</div>
+{% endfor %}
+
+
+<div class="page-width">
+  <div class="page-width--lg">
+	  <div class=" text-center">
+      	{% if blog.all_tags.size > 0 %}
+      	<div>
+        	<div class="content-block content-block--small">
+          		<ul class="list--inline">
+            		<li>
+              			<a href="{{ blog.url }}">{{ 'blogs.article.all_tags' | t }}</a>
+            		</li>
+            		{% for tag in blog.all_tags %}
+              			{% if current_tags contains tag %}
+              		<li>&nbsp;/&nbsp; {{ tag }}</li>
+              			{% else %}
+              		<li>&nbsp;/&nbsp; {{ tag | link_to_tag: tag }}</li>
+              			{% endif %}
+            		{% endfor %}
+          		</ul>
+        	</div>
+      	</div>
+    	{% endif %}
+    	<div class="text-center page-width">
+        	<h1 class="emphasized-title-wrapper team--heading">{{ blog.title }} </h1>
+        	<hr class="thin" />
+	    </div>
+	  </div>                                     
+      
+      <div class="grid margin--top--2x">
+      	{% for article in blog.articles offset:1 %}
+
+      	<div class="grid__item medium-up--one-half ">
+	    	<div class="backgroud-grey">
+              {% if article.image %}
+              <a href="{{ article.url }}">
+                  {{ article | img_url: '560x287',crop: 'center' | img_tag: article.title }}
+              </a>
+              {% else %}
+              <a href="{{ article.url }}">
+
+                <img src="https://cdn.shopify.com/s/files/1/0093/4882/files/generic-blog_560x287_crop_center.png?v=1558730943" />
+                
+              </a>
+              {% endif %}
+              <div class="content-block--small min-height">
+                  <h4 class="blog__title-link no-margin"><a href="{{ article.url }}">{{ article.title }}</a></h4>
+                  <hr class="red--blog"/>
+                  <p class="blog__meta">
+                      {{ article.published_at | time_tag: format: 'month_day_year' }}
+                  </p>
+              </div>
+        	</div>
+        </div>     
+      	{% endfor %}
+      </div>
+  </div>
+
+
+  
+
+  {% if paginate.pages > 1 %}
+    <div class="pagination">
+      {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+    </div>
+  {% endif %}
+
+</div>
+
+{% endpaginate %}
