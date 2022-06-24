@@ -432,3 +432,7 @@
   transform: translate(0, -50%);
   float: unset;
 } */
+
+.template-article .bartow-blog--heading{
+  font-family: 'Titillium Web', sans-serif;
+}
