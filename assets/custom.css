@@ -436,3 +436,20 @@
 .template-article .bartow-blog--heading{
   font-family: 'Titillium Web', sans-serif;
 }
+
+.template-blog .blog-hero-content h1 a{
+  font-family: 'Titillium Web', sans-serif;
+}
+@media (max-width:480px){
+  .template-blog .blog-hero-content h1 a{
+  	letter-spacing:7px;
+  }
+}
+
+.template-blog .emphasized-title-wrapper{
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.template-page .team--heading{
+  font-family: 'Titillium Web', sans-serif;
+}
