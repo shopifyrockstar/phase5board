@@ -49,12 +49,12 @@
 .product-2022-cart .product-single__type{
   font-family: 'Titillium Web', sans-serif;
 }
-.product-2022-cart .product--info .product-form .product-form__item--submit{
+/* .product-2022-cart .product--info .product-form .product-form__item--submit{
   -ms-flex-preferred-size: unset;
   -webkit-flex-basis: unset;
   -moz-flex-basis: unset;
   flex-basis: unset;
-}
+} */
 .product-2022-cart .product--info .product-form .product-form__cart-submit{
   letter-spacing: 0;
 }
@@ -452,4 +452,42 @@
 
 .template-page .team--heading{
   font-family: 'Titillium Web', sans-serif;
+}
+
+
+.new-2022 .product-form__item{
+  -webkit-flex: 1 0 50%;
+  -moz-flex: 1 0 50%;
+  -ms-flex: 1 0 50%;
+  flex: 1 0 50%;
+}
+.buttons-wrapper{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.buttons-wrapper .buttons-inner-wrapper{
+  flex: 1 0 50%;
+  padding: 0 5px;
+}
+.buttons-wrapper .buttons-inner-wrapper a:hover{
+  background-color: #b00c00;
+  color: white;
+}
+.shop-now-instead:hover{
+  background-color: #b00c00;
+  color: white;
+}
+
+.new-2022 .product-form .btn{
+  width: 100%;
+}
+.btn.product-form__cart-submit{
+  text-transform: unset;
+  font-weight: normal;
+  font-size: 14px;
+}
+.btn.product-form__cart-submit:hover{
+  /* color: #a52621; */
+  /* background-color: #e30f00; */
 }
