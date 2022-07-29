@@ -249,7 +249,21 @@
             </div>
         </div>
     </div>
+	<script>
+  const dfLayerOptions = {
+    installationId: 'd63c7019-c116-49b5-9d61-73907c75a726',
+    zone: 'us1'
+  };
 
+  
+
+  (function (l, a, y, e, r, s) {
+    r = l.createElement(a); r.onload = e; r.async = 1; r.src = y;
+    s = l.getElementsByTagName(a)[0]; s.parentNode.insertBefore(r, s);
+  })(document, 'script', 'https://cdn.doofinder.com/livelayer/1/js/loader.min.js', function () {
+    doofinderLoader.load(dfLayerOptions);
+  });
+</script>
 
     {% if section.settings.promo_bar_enable %}
     <div id="NotificationPromo" class="notification notification--promo"
