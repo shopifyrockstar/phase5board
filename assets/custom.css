@@ -40,6 +40,10 @@
   order: 7;
   margin-top: 50px;
 }
+#shopify-section-product-template-3 .yotpo-widget-wrapper .yotpo.yotpo-main-widget{
+  max-width: 1200px;
+  width: 100%;
+}
 #shopify-section-product-template-3 .yotpo-widget-wrapper .title-wrapper h1{
   text-align: center;
 }
