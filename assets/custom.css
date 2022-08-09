@@ -513,3 +513,10 @@
   /* color: #a52621; */
   /* background-color: #e30f00; */
 }
+
+#shopify-section-product-template .yotpo.yotpo-main-widget{
+  max-width: 1180px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 10px;
+}
