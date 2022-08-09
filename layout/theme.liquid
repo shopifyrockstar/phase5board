@@ -8,7 +8,33 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{ shop.locale }}"> <!--<![endif]-->
 <head>
 
+    <!-- Google tag (gtag.js) - Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-416165411"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'AW-416165411');
+    </script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5727075-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-5727075-2');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K769RRZ');</script>
+    <!-- End Google Tag Manager -->
     
   <meta name="google-site-verification" content="ZWDY6uv6_sYkIv-iFshD7eLU52cc7yDB6095JojEvPw" />
 
@@ -109,22 +135,12 @@
   {% render 'shogun-head' %}
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-<!-- Global site tag (gtag.js) - Google Ads: 416165411 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-416165411"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-416165411');
-</script> 
-
     <script type="text/javascript">
 (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/yuXZ5CukeKuGtxt68HqroHNUhNWh32GtMSxeD5x3/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
 </script>
 
   
-</head>
+<!--DOOFINDER-SHOPIFY--> {% if content_for_header contains 'doofinder-installed.js' %} {% render 'doofinder-script-tag' %} {% endif %} <!--/DOOFINDER-SHOPIFY--></head>
 
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
 
@@ -201,6 +217,12 @@
       </button>
     </div>
   {% endif %}
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K769RRZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+  
 </body>
 </html>
 

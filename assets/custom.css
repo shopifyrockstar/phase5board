@@ -24,6 +24,24 @@
   position: relative;
   box-shadow: 0 0 70px 100px rgb(255 255 255);
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+#shopify-section-product-template-3 .insta-wrapper{
+  order: 8;
+}
+#shopify-section-product-template-3 .overview-wrapper{
+  width: 100%;
+}
+#shopify-section-product-template-3 .table-section{
+  width: 100%;
+}
+#shopify-section-product-template-3 .yotpo-widget-wrapper{
+  order: 7;
+  margin-top: 50px;
+}
+#shopify-section-product-template-3 .yotpo-widget-wrapper .title-wrapper h1{
+  text-align: center;
 }
 #shopify-section-product-template-3 hr.red{
   border-top-width: 4px;
