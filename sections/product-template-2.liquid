@@ -243,6 +243,7 @@
   {% endif %}
 {% endunless %}
 
+{% unless template contains 'prop.cart' or template contains 'shrimp.cart' or template contains 'scamp.cart' or template contains 'fish.cart' or template contains 'oogle.cart' or template contains 'xb.cart' or template contains 'cl.cart' or template contains 'ratchet.cart' %}
 <div class="yotpo yotpo-main-widget"
 data-product-id="{{ product.id }}"
 data-name="{{ product.title | escape }}"
@@ -252,6 +253,7 @@ data-price="{{ variant.price | money_without_currency }}"
 data-currency="{{ shop.currency }}"
 data-description="{{ product.description | escape }}">
 </div>
+{% endunless %}
 
 {% schema %}
   {
