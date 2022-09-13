@@ -126,6 +126,10 @@
 
         </div>
 
+        <div class="yotpo bottomLine star-rating" style="display:inline-block"
+          data-product-id="{{ product.id }}">
+       </div>
+
         <hr>
 
         <form action="/cart/add" method="post" enctype="multipart/form-data" class="product-form" id="AddToCartForm">
@@ -201,6 +205,8 @@
 
           <div class="product-form__item product-form__item--submit">
             {% if product.title == '2022 Phase Five Shrimp' %}
+            	<a class="shop-now-instead" href="/collections/shrimp-wake-skimboards"><span>Shop Now</span></a>
+             {% elsif product.title == '2023 Phase Five Shrimp' %}
             	<a class="shop-now-instead" href="/collections/shrimp-wake-skimboards"><span>Shop Now</span></a>
             {% elsif product.title == '2022 Phase Five Scamp' %}
             	<a class="shop-now-instead" href="/collections/scamp-wake-skimboards"><span>Shop Now</span></a>

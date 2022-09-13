@@ -524,3 +524,20 @@
 .product-review-widget-wrapper{
   margin-top: 50px;
 }
+
+
+.stability-wrapper span{
+  border: 1px solid lightgrey;
+  padding: 2px 10px;
+}
+.stability-wrapper span:not(:last-child){  
+  border-right: unset;
+}
+.stability-wrapper span.highlighted{
+  background-color: red;
+  border-color: red;
+  color: white;
+}
+.yotpo.star-rating{
+  margin-top: 10px;
+}
