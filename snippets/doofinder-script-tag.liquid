@@ -59,7 +59,8 @@ document.addEventListener('doofinder.cart.add', function(event) {
       'items': [{
         'id': id,
         'quantity': amount
-      }]
+      }],
+      sections: "cart-items,cart-icon-bubble,cart-live-region-text,cart-footer"
     }
 
     fetch(window.Shopify.routes.root + 'cart/add.js', {
@@ -69,13 +70,21 @@ document.addEventListener('doofinder.cart.add', function(event) {
         },
         body: JSON.stringify(formData)
       })
-
-      .then(response => {
-        return response.json()
-      })
+      .then(response => response.json())
+      .then(data => {renderSections(data.sections)})
       .catch((error) => {
         console.error('Error:', error)
       });
+  }
+
+  function renderSections(sections){
+    for( section_id in sections ){
+      let section = document.querySelector("#"+section_id);
+      let section_html = sections[section_id];
+      if(section && section_html){
+        section.innerHTML = section_html;
+      }
+    }
   }
 });
 /** END SHOPIFY ADD TO CART **/
