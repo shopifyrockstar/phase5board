@@ -541,3 +541,25 @@
 .yotpo.star-rating{
   margin-top: 10px;
 }
+.yotpo.star-rating .yotpo-display-wrapper .yotpo-stars span {
+  color: red;
+}
+
+.yotpo-widget-wrapper .yotpo .yotpo-bottomline .yotpo-icon-star, 
+.yotpo-widget-wrapper .yotpo .yotpo-bottomline .yotpo-icon-half-star, 
+.yotpo-widget-wrapper .yotpo .yotpo-bottomline .yotpo-icon-empty-star{
+  color: red;
+}
+.yotpo-widget-wrapper .yotpo.yotpo-main-widget .yotpo-bottomline.yotpo-bottomline-2-boxes .yotpo-bottomline-box-2 .yotpo-star-distribution .yotpo-star-distribution-content .yotpo-distibutions-stars .review-stars .yotpo-icon-star, 
+.yotpo-widget-wrapper .yotpo.yotpo-main-widget .yotpo-bottomline.yotpo-bottomline-2-boxes .yotpo-bottomline-box-2 .yotpo-star-distribution .yotpo-star-distribution-content .yotpo-distibutions-stars .review-stars .yotpo-icon-empty-star, 
+.yotpo-widget-wrapper .yotpo .yotpo-modal-dialog .yotpo-bottomline.yotpo-bottomline-2-boxes .yotpo-bottomline-box-2 .yotpo-star-distribution .yotpo-star-distribution-content .yotpo-distibutions-stars .review-stars .yotpo-icon-star, 
+.yotpo-widget-wrapper .yotpo .yotpo-modal-dialog .yotpo-bottomline.yotpo-bottomline-2-boxes .yotpo-bottomline-box-2 .yotpo-star-distribution .yotpo-star-distribution-content .yotpo-distibutions-stars .review-stars .yotpo-icon-empty-star{
+  color: red; 
+}
+
+.yotpo-widget-wrapper .yotpo .yotpo-review .yotpo-header .yotpo-review-stars .yotpo-icon, 
+.yotpo-widget-wrapper .yotpo .yotpo-comment .yotpo-header .yotpo-review-stars .yotpo-icon, 
+.yotpo-widget-wrapper .yotpo .yotpo-question .yotpo-header .yotpo-review-stars .yotpo-icon, 
+.yotpo-widget-wrapper .yotpo .yotpo-onsite-upload .yotpo-header .yotpo-review-stars .yotpo-icon{
+  color: red;  
+}
