@@ -6,13 +6,13 @@
 
 {% include 'breadcrumbs', content: product %}
 {% endcomment %}
-
+{% if product.title contains '2023 Phase Five Diamond Turbo' %}
 <div class="top-banner-wrapper">
-  <img class="desktop-show" src="https://cdn.shopify.com/s/files/1/0070/1582/files/hero-23ahi.jpg?v=1663704681">  
-  <img class="mobile-show" src="https://cdn.shopify.com/s/files/1/0070/1582/files/hero-mobile-23ahi.jpg?v=1663704678">  
+  <img class="desktop-show" src="https://cdn.shopify.com/s/files/1/0070/1582/files/hero-23diamond.jpg?v=1663617713">  
+  <img class="mobile-show" src="https://cdn.shopify.com/s/files/1/0070/1582/files/hero-mobile-23diamond.jpg?v=1663617710">  
   
 </div>
-
+{% endif %}
 {% section 'product-template-3' %}
 
 {% section 'recommend-products' %}

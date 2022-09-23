@@ -94,7 +94,7 @@
                 {{ wsprice | money }}
               </span>
             </li>
-            {% if product.compare_at_price_max > product.price %}
+            {% if current_variant.compare_at_price > current_variant.price %}
               <li>
                 <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
                 <s id="ComparePrice-{{ section.id }}" class="product-single__price product-single__price--compare">
@@ -205,20 +205,34 @@
           <div class="product-form__item product-form__item--submit">
             {% if product.title == '2022 Phase Five Shrimp' %}
             	<a class="shop-now-instead" href="/collections/shrimp-wake-skimboards"><span>Shop Now</span></a>
-             {% elsif product.title == '2023 Phase Five Shrimp' %}
+            {% elsif product.title == '2023 Phase Five Shrimp' %}
             	<a class="shop-now-instead" href="/collections/shrimp-wake-skimboards"><span>Shop Now</span></a>
             {% elsif product.title == '2022 Phase Five Scamp' %}
             	<a class="shop-now-instead" href="/collections/scamp-wake-skimboards"><span>Shop Now</span></a>
+            {% elsif product.title == '2023 Phase Five Scamp' %}
+            	<a class="shop-now-instead" href="/collections/scamp-wake-skimboards"><span>Shop Now</span></a>
             {% elsif product.title == '2022 Phase Five Fish' %}
+            	<a class="shop-now-instead" href="/collections/fish-wake-skimboards"><span>Shop Now</span></a>
+            {% elsif product.title == '2023 Phase Five Fish' %}
             	<a class="shop-now-instead" href="/collections/fish-wake-skimboards"><span>Shop Now</span></a>
             {% elsif product.title == '2022 Phase Five Prop' %}
             	<a class="shop-now-instead" href="/collections/prop-wake-skimboards"><span>Shop Now</span></a>
+            {% elsif product.title == '2023 Phase Five Prop' %}
+            	<a class="shop-now-instead" href="/collections/prop-wake-skimboards"><span>Shop Now</span></a>
+            {% elsif product.title == '2023 Phase Five Oogle' %}
+            	<a class="shop-now-instead" href="/collections/oogle-wake-skimboards"><span>Shop Now</span></a>
             {% elsif product.title == '2022 Phase Five Oogle' %}
             	<a class="shop-now-instead" href="/collections/oogle-wake-skimboards"><span>Shop Now</span></a>
+            {% elsif product.title == '2023 Phase Five Ratchet' %}
+            	<a class="shop-now-instead" href="/collections/ratchet-wake-skimboards"><span>Shop Now</span></a>
             {% elsif product.title == '2022 Phase Five Ratchet' %}
             	<a class="shop-now-instead" href="/collections/ratchet-wake-skimboards"><span>Shop Now</span></a>
+            {% elsif product.title == '2023 Phase Five Diamond CL' %}
+            	<a class="shop-now-instead" href="/collections/diamond-cl-wake-skimboards"><span>Shop Now</span></a>
             {% elsif product.title == '2022 Phase Five Diamond CL' %}
             	<a class="shop-now-instead" href="/collections/diamond-cl-wake-skimboards"><span>Shop Now</span></a>
+            {% elsif product.title == '2023 Phase Five XB' %}
+            	<a class="shop-now-instead" href="/collections/xb-wake-skimboards"><span>Shop Now</span></a>
             {% elsif product.title == '2022 Phase Five XB' %}
             	<a class="shop-now-instead" href="/collections/xb-wake-skimboards"><span>Shop Now</span></a>
             {% else %}

@@ -3,10 +3,17 @@
 {{product.metafields.shogun.above}}
 {% comment %}
   The contents of the product.liquid template can be found in /sections/product-template.liquid
-{% endcomment %}
-{% include 'breadcrumbs', content: product %}
 
-{% section 'product-template' %}
+{% include 'breadcrumbs', content: product %}
+{% endcomment %}
+
+<div class="top-banner-wrapper">
+  <img class="desktop-show" src="https://cdn.shopify.com/s/files/1/0070/1582/files/hero-scamp.jpg?v=1633009435">  
+  <img class="mobile-show" src="https://cdn.shopify.com/s/files/1/0070/1582/files/hero-mobile-scamp.jpg?v=1633009460">  
+  
+</div>
+
+{% section 'product-template-3' %}
 
 {% section 'recommend-products' %}
 
@@ -33,5 +40,4 @@
 
 
 {{product.metafields.shogun.below}}
-
 

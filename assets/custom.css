@@ -542,3 +542,11 @@
   margin-top: 15px;
   margin-bottom: 10px;
 }
+
+
+a#scapl-geocode-btn{
+  display:none;
+}
+#scasl-tabs{
+  display:none;
+}
