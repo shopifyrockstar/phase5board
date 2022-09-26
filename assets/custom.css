@@ -550,3 +550,41 @@ a#scapl-geocode-btn{
 #scasl-tabs{
   display:none;
 }
+
+.product-slider-wrapper .three-image-wrapper .three-image-inner-wrapper a{
+  margin: 0;
+  display: block;
+  height: 100%;
+}
+.product-slider-wrapper .three-image-wrapper .three-image-inner-wrapper *{
+  margin:0;
+  margin-right: 10px;
+}
+@media (max-width:480px){
+  .product-slider-wrapper .three-image-wrapper .three-image-inner-wrapper *{
+    margin:0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
