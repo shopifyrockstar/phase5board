@@ -278,11 +278,19 @@
 </div>
 
 <script src="https://shopify.covet.pics/covet-pics-widget-inject.js"></script>
-{% if template contains 2023 %}<div class="product-slider-wrapper">{% endif %}
+{% if template contains 2023 %}
+  <div class="product-slider-wrapper">
+{% else %}
+  <div class="product-old-wrapper">
+{% endif %}
   {% render 'additional-info' %}
   {% render 'additional-info-next' %}
   {% render 'additional-info-next-next' %}
-{% if template contains 2023 %}</div>{% endif %}
+{% if template contains 2023 %}
+  </div>
+{% else %}
+  </div>
+{% endif %}
 
 
 {% unless product == empty %}

@@ -560,17 +560,102 @@ a#scapl-geocode-btn{
   margin:0;
   margin-right: 10px;
 }
+
+.product-slider-wrapper .slick-slider .slick-arrow{
+  z-index: 99;
+  width: 40px;
+  height: 40px;
+}
+.product-slider-wrapper .slick-slider .slick-arrow:before{
+  font-size: 30px;
+}
+.product-slider-wrapper .slick-slider .slick-prev{
+  left: 30px;
+}
+.product-slider-wrapper .slick-slider .slick-next{
+  right: 30px;
+}
+
+
 @media (max-width:480px){
   .product-slider-wrapper .three-image-wrapper .three-image-inner-wrapper *{
     margin:0;
   }
 }
 
-
-
-
-
-
+#ProductModal{
+  z-index: 999;
+}
+.slider-zoom img{
+  display: none;
+}
+.slider-zoom img.active{
+  display: block;
+  max-width: 85%;
+}
+.slider-zoom .modal__inner:before{
+  /* display: inline-block;
+  font-size: 30px;
+  content: '←';
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  cursor: pointer;
+  font-family: 'slick';
+  line-height: 1;
+  opacity: .75;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+.slider-zoom .modal__inner:after{
+  /* display: inline-block;
+  content: '→';
+  font-size: 30px;
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  cursor: pointer;
+  font-family: 'slick';
+  line-height: 1;
+  opacity: .75;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+.slider-zoom .modal__inner .slick-prev{
+  left: 50px;  
+  width: 30px;
+  height: 30px;
+}
+.slider-zoom .modal__inner .slick-prev:before{
+  color: black;
+  font-size: 28px;
+}
+.slider-zoom .modal__inner .slick-next{
+  right: 50px;  
+  width: 30px;
+  height: 30px;
+}
+.slider-zoom .modal__inner .slick-next:before{
+  color: black;
+  font-size: 28px;
+}
+@media (max-width:480px){
+  .slider-zoom .modal__inner .slick-prev,.slider-zoom .modal__inner .slick-prev{
+    z-index: 999;
+  }
+  .slider-zoom .modal__inner .slick-prev{
+    left:0;
+  }
+  .slider-zoom .modal__inner .slick-next{
+    right:0;
+  }
+}
 
 
 
