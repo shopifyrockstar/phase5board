@@ -2169,7 +2169,7 @@ theme.Product = (function() {
     this.selectors = {
       originalSelectorId: '#ProductSelect-' + sectionId,
       modal: 'ProductModal',
-      productZoomImage: '#ProductZoomImg',
+      productZoomImage: '.product-modal__image',
       addToCart: '#AddToCart-' + sectionId,
       productPrice: '#ProductPrice-' + sectionId,
       comparePrice: '#ComparePrice-' + sectionId,
@@ -2397,22 +2397,31 @@ theme.Product = (function() {
         return;
       }
 
-      var self = this;
+      var self = this;      
 
       $(this.selectors.productImageWrap).on('click' + this.settings.namespace, function(evt) {
         evt.preventDefault();
         // Empty src before loadig new image to avoid awkward image swap
         $(self.selectors.productZoomImage)
           .attr('src', '')
-          .attr('src', $(this).attr('href'));
+          .attr('src', $(this).attr('href'));          
       });
 
       this.ProductModal = new window.Modals(this.selectors.modal, 'product-modal');
 
       // Close modal if clicked, but not if the image is clicked
       this.ProductModal.$modal.on('click' + this.settings.namespace, function(evt) {
-        if (evt.target.nodeName !== 'IMG') {
-          self.ProductModal.close();
+        
+        if ( evt.target.nodeName !== 'IMG') {
+          // $('#ProductModal .modal__inner').empty();
+          // $('<img src="" id="ProductZoomImg" class="product-modal__image"></img>').appendTo($('#ProductModal .modal__inner'));
+          // if ( $('#ProductModal').hasClass('modal--is-active') ){
+          //   $('#ProductModal').removeClass('modal--is-active');
+          // }
+          // if ( $('#ProductModal').hasClass('slider-zoom') ){
+          //   $('#ProductModal').removeClass('slider-zoom');
+          // }          
+          // self.ProductModal.close();
         }
       });
     },
@@ -2444,18 +2453,55 @@ theme.Product = (function() {
       $(this.selectors.bottomImageWrap).on('click' + this.settings.namespace, function(evt) {
         console.log("clicked bottom images");
         evt.preventDefault();
+        
         // Empty src before loadig new image to avoid awkward image swap
         $(self.selectors.productZoomImage)
           .attr('src', '')
           .attr('src', $(this).attr('href'));
-      });
+      });      
 
-      this.ProductModal = new window.Modals(this.selectors.modal, 'product-modal');
+      this.ProductModal = new window.Modals(this.selectors.modal, 'product-modal');      
 
       // Close modal if clicked, but not if the image is clicked
-      this.ProductModal.$modal.on('click' + this.settings.namespace, function(evt) {
-        if (evt.target.nodeName !== 'IMG') {
-          self.ProductModal.close();
+      this.ProductModal.$modal.on('click' + this.settings.namespace, function(evt) {        
+        if (evt.target.nodeName !== 'IMG' ) {          
+          if ( evt.target.nodeName == 'BUTTON'){
+            let total_image_count = 0;
+            let current_active_image_position = 0;
+            $('.modal__inner img').each(function(){
+              total_image_count += 1;
+              if ($(this).hasClass('active')){
+                current_active_image_position = $(this).index();
+              }
+            })
+            if ($(evt.target).hasClass('slick-prev')){ //prev arrow is clicked
+              if (current_active_image_position > 1 ){
+                $('.modal__inner img').eq(current_active_image_position - 1).removeClass('active');
+                $('.modal__inner img').eq(current_active_image_position - 2).addClass('active');
+              }else{
+                $('.modal__inner img').eq(total_image_count - 1 ).addClass('active');
+                $('.modal__inner img').eq(0).removeClass('active');
+              }
+            }else{//next arrow is clicked
+              if (current_active_image_position < total_image_count ){
+                $('.modal__inner img').eq(current_active_image_position - 1 ).removeClass('active');
+                $('.modal__inner img').eq(current_active_image_position).addClass('active');
+              }else{
+                $('.modal__inner img').eq(total_image_count - 1 ).removeClass('active');
+                $('.modal__inner img').eq(0).addClass('active');
+              }
+            }
+          }else{
+            $('#ProductModal .modal__inner').empty();
+            $('<img src="" id="ProductZoomImg" class="product-modal__image"></img>').appendTo($('#ProductModal .modal__inner'));
+            if ( $('#ProductModal').hasClass('modal--is-active') ){
+              $('#ProductModal').removeClass('modal--is-active');
+            }
+            if ( $('#ProductModal').hasClass('slider-zoom') ){
+              $('#ProductModal').removeClass('slider-zoom');
+            }          
+            self.ProductModal.close();
+          }        
         }
       });
     },
@@ -2856,19 +2902,34 @@ $('.product-slider-wrapper .two-image-inner-wrapper').slick({
 });
 
 $(document).ready(function(){
-  // if ( $(window).width() > 750 ){
-    
-  // }
   if ( $(window).width() < 750 ){    	
-    $('.three-image-inner-wrapper').slick({
+    $('.product-old-wrapper .three-image-inner-wrapper').slick({
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1
     });
-    $('.two-image-inner-wrapper').slick({
+    $('.product-old-wrapper .two-image-inner-wrapper').slick({
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1
     });
   }
+  $('.product-slider-wrapper .three-image-inner-wrapper img').click(function(){
+    $('#ProductModal .modal__inner').empty();
+    var self_url = $(this).attr('src');
+    $(this).parents('.slick-track').find('div').each(function(){
+      // console.log($(this).data('slick-index'));
+      var is_original_image = $(this).attr('aria-describedby');
+      if ( is_original_image != null ){
+        if ( self_url == $(this).find('img').attr('src') ){
+          $(this).find('img').clone().addClass('product-modal__image').addClass('product-modal__image active').appendTo("#ProductModal .modal__inner");        
+        }else{
+          $(this).find('img').clone().addClass('product-modal__image').appendTo("#ProductModal .modal__inner");
+        }                
+      }
+      $('#ProductModal').addClass('modal--is-active').addClass('slider-zoom');      
+    })
+    $('<button type="button" class="slick-prev slick-arrow"></button>').prependTo($("#ProductModal .modal__inner"));
+    $('<button type="button" class="slick-next slick-arrow"></button>').appendTo($("#ProductModal .modal__inner"));
+  })
 })
