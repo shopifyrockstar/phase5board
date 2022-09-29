@@ -2914,7 +2914,7 @@ $(document).ready(function(){
       slidesToScroll: 1
     });
   }
-  $('.product-slider-wrapper .three-image-inner-wrapper img').click(function(){
+  $('.product-slider-wrapper .three-image-inner-wrapper img, .product-slider-wrapper .two-image-inner-wrapper img').click(function(){
     $('#ProductModal .modal__inner').empty();
     var self_url = $(this).attr('src');
     $(this).parents('.slick-track').find('div').each(function(){
