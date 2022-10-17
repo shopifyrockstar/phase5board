@@ -1,5 +1,11 @@
 {% capture wsprice %}{% include 'ws-product-price-calculator', product: product, collections: product.collections, variantId: product.variants.first.id %}{% endcapture %}{%- assign wsprice = wsprice | plus: 0 -%}
-
+{% assign has_coming_soon = false %}
+{% for tag in product.tags %}
+  {% if tag == 'coming-soon' %}
+    {% assign has_coming_soon = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
 {% comment %}
   The product card snippet is passed a liquid object, used in this file
   as "product". The object is either "product" or "item", the latter if
@@ -57,9 +63,16 @@
         {% endif %}
       </div>
     {% else %}
-      <div class="product-card__availability">
-        {{ 'products.product.sold_out' | t }}
-      </div>
+      {% if has_coming_soon == true %}
+        <div class="product-card__availability">
+          Coming Soon
+        </div>
+      {% else %}
+        <div class="product-card__availability">
+          {{ 'products.product.sold_out' | t }}
+        </div>
+      {% endif %}
+      
     {% endif %}
   </div>
 
