@@ -558,7 +558,10 @@ a#scapl-geocode-btn{
 }
 .product-slider-wrapper .three-image-wrapper .three-image-inner-wrapper *{
   margin:0;
-  margin-right: 10px;
+/*   margin-right: 10px; */
+}
+.product-slider-wrapper .three-image-wrapper .three-image-inner-wrapper .slick-slide{
+  margin:10px;
 }
 
 .product-slider-wrapper .slick-slider .slick-arrow{
