@@ -7,6 +7,14 @@
   {% endfor %}
 </script>
 
+{% assign has_coming_soon = false %}
+{% for tag in product.tags %}
+  {% if tag == 'coming-soon' %}
+    {% assign has_coming_soon = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
 <div class="page-width product-2022-cart" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true" data-ajax="{{ section.settings.enable_ajax }}" data-stock="{{ section.settings.stock_enable }}">
   {% assign product_image_size = '1024x1024' %}
 
@@ -243,7 +251,11 @@
                   {% unless current_variant.available %}disabled="disabled"{% endunless %}>
                   <span id="AddToCartText-{{ section.id }}">
                     {% unless current_variant.available %}
-                      {{ 'products.product.sold_out' | t }}
+                      {% if has_coming_soon == true %}                    
+                        Coming Soon
+                      {% else %}
+                        {{ 'products.product.sold_out' | t }}
+                      {% endif %}
                     {% else %}
                       {{ 'products.product.add_to_cart' | t }}
                     {% endunless %}
