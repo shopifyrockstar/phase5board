@@ -2297,16 +2297,24 @@ theme.Product = (function() {
         } else {
           // Variant is sold out, disable the submit button
           cache.$addToCart.prop('disabled', true).addClass('btn--sold-out');
-          cache.$addToCartText.html(theme.strings.soldOut);
-          if (this.settings.stockSetting) {
-            if (variant.incoming) {
-              cache.$stock
-                .html(theme.strings.willBeInStockAfter.replace('[date]', variant.next_incoming_date))
-                .removeClass('hide');
-            } else {
-              cache.$stock.addClass('hide');
+          var class_list = cache.$addToCart.classList;
+          // var class_list_value = class_list.value;
+          // console.log(class_list_value);
+          if (cache.$addToCart.hasClass('coming-soon')){
+            cache.$addToCartText.html("Coming Soon");
+          }else{
+            cache.$addToCartText.html(theme.strings.soldOut);
+            if (this.settings.stockSetting) {
+              if (variant.incoming) {
+                cache.$stock
+                  .html(theme.strings.willBeInStockAfter.replace('[date]', variant.next_incoming_date))
+                  .removeClass('hide');
+              } else {
+                cache.$stock.addClass('hide');
+              }
             }
           }
+          
         }
       } else {
         cache.$addToCart.prop('disabled', true).removeClass('btn--sold-out');
