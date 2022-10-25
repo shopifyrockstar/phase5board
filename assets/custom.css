@@ -660,8 +660,22 @@ a#scapl-geocode-btn{
   }
 }
 
-
-
+.template-blog .main-content .grid{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+/*   gap: 10px 20px; */
+  column-gap: 20px;
+}
+.template-blog .main-content .grid:after{
+  display:none;
+}
+.template-blog .main-content .grid .grid__item{
+  width: calc( 50% - 20px );
+  padding: 0;
+  float: unset;
+}
 
 
 
