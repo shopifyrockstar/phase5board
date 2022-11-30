@@ -20,6 +20,20 @@
     {% assign url = product.url | within: collection %}
 {% endif %}
 
+{% for option in product.options %}
+  {% if option == "Size" %}    
+    {% for variant in product.variants %}
+      {% assign cur_color = current_color | lstrip | rstrip %}      
+      {% if variant.title contains cur_color %}
+        {% if variant.available %}
+          {% assign url = variant.url %}
+          {% break %}
+        {% endif %}            
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
 <a href="{{ url }}" class="product-card">
    <div class="product-card__image-wrapper min-height--product position-relative">
     <!-- HC - image of variant - 24 Nov '20 -->

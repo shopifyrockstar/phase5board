@@ -535,6 +535,13 @@ slate.Variants = (function() {
       this._updateSKU(variant);
       this.currentVariant = variant;
 
+      var variant_order = "variant_" + variant.id;
+      
+      if ( !$.isEmptyObject(variant_data_object) ){
+        variant_barcode = variant_data_object[variant_order];
+        $('#barcode').val(variant_barcode);
+      }
+      
       if (this.enableHistoryState) {
         this._updateHistoryState(variant);
       }

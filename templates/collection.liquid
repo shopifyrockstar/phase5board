@@ -52,9 +52,8 @@
                           {% endcapture %}
                           {% unless colorlist contains color %}
                               <div class="grid__item small--one medium-up--one-third mb-2">
-                                {% include 'product-card', product: product, image: variant.featured_image, hc_url: variant.url %}
+                                {% include 'product-card', product: product, image: variant.featured_image, hc_url: variant.url, current_color:color %}
                               </div>
-
                               {% capture tempList %}
                                   {{colorlist | append: color | append: ' '}}
                               {% endcapture %}
