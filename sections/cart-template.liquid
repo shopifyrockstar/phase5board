@@ -13,7 +13,7 @@
             <th>{{ 'cart.label.total' | t }}</th>
           </thead>
           <tbody id="CartProducts">
-            {% for item in cart.items %}            
+            {% for item in cart.items %}
               <tr class="cart__row responsive-table__row">
                 <td class="cart__cell--image text-center">
                   <a href="{{ item.url | within: collections.all }}" class="cart__image">
@@ -42,22 +42,22 @@
 
                       {% endunless %}
                     {% endfor %}{%- endcomment -%}{% for p in item.properties %}
-          {% unless p.last == blank %}
-            <div class="cart-property">
-              <span class="property_name">{{ p.first }}:
-              </span>
-              {% if p.last contains '/uploads/' %}
-                <span class="property_value" >
-                  <a href="{{ p.last }}">Uploaded File</a>
-                </span>
-              <br/>
-              {% else %}
-                <span class="property_value" >{{ p.last }}</span><br/>
-              {% endif %}
-            </div>
-          {% endunless %}
-        {% endfor %}
-        <button type="button" class="edit_cart_option btn btn--primary button" data-product_id="{{item.product_id}}" data-key="{{item.key}}" data-variant_id="{{item.variant_id}}" data-quantity="{{item.quantity}}">Edit Options</button>
+                    {% unless p.last == blank %}
+                      <div class="cart-property">
+                        <span class="property_name">{{ p.first }}:
+                        </span>
+                        {% if p.last contains '/uploads/' %}
+                          <span class="property_value" >
+                            <a href="{{ p.last }}">Uploaded File</a>
+                          </span>
+                        <br/>
+                        {% else %}
+                          <span class="property_value" >{{ p.last }}</span><br/>
+                        {% endif %}
+                      </div>
+                    {% endunless %}
+                  {% endfor %}
+        {% comment %}<button type="button" class="edit_cart_option btn btn--primary button" data-product_id="{{item.product_id}}" data-key="{{item.key}}" data-variant_id="{{item.variant_id}}" data-quantity="{{item.quantity}}">Edit Options</button>{% endcomment %}
                   {% endif %}
 
                   <p>
