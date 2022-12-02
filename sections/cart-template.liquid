@@ -14,8 +14,6 @@
           </thead>
           <tbody id="CartProducts">
             {% for item in cart.items %}
-            {% capture wsprice %}{% include 'ws-product-price-calculator', product: item, collections: item.product.collections, variantId: item.id %}{% endcapture %}{% assign wsprice = wsprice | plus: 0 %}
-            {% capture cart_total %}{{ wsprice | times: item.quantity | plus: cart_total }}{% endcapture %}
               <tr class="cart__row responsive-table__row">
                 <td class="cart__cell--image text-center">
                   <a href="{{ item.url | within: collections.all }}" class="cart__image">
@@ -75,7 +73,7 @@
                     <small class="cart-item__original-price cart__item-total"><s>{{ item.original_line_price | money }}</s></small><br>
                   {% endif %}
                   <span class="cart__item-total">
-                    {{ wsprice | times: item.quantity | money }}
+                    {{ item.line_price | money }}
                   </span>
                   {% for discount in item.discounts %}
                     <p class="cart-item__discount cart__item-total">{{ discount.title }}</p>
@@ -101,7 +99,7 @@
           </div>
           {% endif %}
           <div class="grid__item cart__buttons text-right small--text-center{% if section.settings.cart_notes_enable %} medium-up--one-half{% endif %}">
-            <p class="h3 cart__subtotal" id="CartSubtotal">{{ cart_total | money }}</p>
+            <p class="h3 cart__subtotal" id="CartSubtotal">{{ cart.total_price | money }}</p>
             <p id="cartDiscountTotal">
             {% if cart.total_discounts > 0 %}
               {% assign savings = cart.total_discounts | money %}
@@ -113,7 +111,7 @@
             <button type="submit" name="checkout" class="btn">{{ 'cart.general.checkout' | t }}</button>
           </div>
         </div>
-      </form>{% include 'ws-pro-cart' %}
+      </form>
     {% else %}
       <div class="page-empty text-center">
         <h1>{{ 'cart.general.title' | t }}</h1>
