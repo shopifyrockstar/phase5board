@@ -290,7 +290,7 @@
 </div>
 
 <script src="https://shopify.covet.pics/covet-pics-widget-inject.js"></script>
-{% if template contains 2023 %}
+{% if template contains 2023 or product.template_suffix contains 'cart' %}
   <div class="product-slider-wrapper">
 {% else %}
   <div class="product-old-wrapper">
@@ -299,7 +299,7 @@
   {% render 'additional-info-next' %}
   {% render 'additional-info-next-next' %}
   {% render 'additional-info-next-next-next' %}
-{% if template contains 2023 %}
+{% if template contains 2023 or product.template_suffix contains 'cart'%}
   </div>
 {% else %}
   </div>

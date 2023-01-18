@@ -3016,15 +3016,17 @@
     "priority": 1
   },
   {
-    "lat": "51.0734604",
-    "lng": "-114.0471958",
+    "lat": "52.3110773",
+    "lng": "-114.1038946",
     "id": 9433811,
     "name": "THE LAUNCH OF SYLVAN LAKE",
-    "phone": "(587) 830-4377",
-    "address": "2409 7TH ST NE",
+    "phone": "(403) 864-2628",
+    "web": "http:\/\/thelaunchsylvan.ca\/",
+    "address": "5220 Lakeshore Dr",
+    "country": "Canada",
     "state": "AB",
-    "city": "CALGARY",
-    "postal": "T2E4C7",
+    "city": "Sylvan Lake",
+    "postal": "T4S 1E8",
     "priority": 1
   },
   {
