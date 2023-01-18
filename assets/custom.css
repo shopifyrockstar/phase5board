@@ -688,8 +688,12 @@ a#scapl-geocode-btn{
   display:none;
 }
 
-
-
+.hide-thumbs .hide-thumb{
+  display: none;
+}
+.hide-thumbs .show-thumb{
+  display: block;
+}
 
 
 

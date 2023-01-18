@@ -44,9 +44,13 @@
         </div>
         {% if product.images.size > 1 %}
           <div class="photos__item photos__item--thumbs" >
-            <div class="product-single__thumbnails product-single__thumbnails--static" id="ProductThumbs-{{ section.id }}">
+            <div class="product-single__thumbnails product-single__thumbnails--static
+                      {% if product.title == 'Phase Five 3D Speed Base Twin Fin Set' or product.title == 'Phase Five 3D Dimpster Twin Fin Set' %}
+                      hide-thumbs
+                      {% endif %}" id="ProductThumbs-{{ section.id }}">
               {% for image in product.images %}
-                <div class="product-single__thumbnail-item {% if image == featured_image %} is-active {% endif %}">
+                <div class="product-single__thumbnail-item {% if image == featured_image %} is-active {% endif %}
+                           {% if product.selected_or_first_available_variant.title == image.alt %}show-thumb {% else %}hide-thumb{% endif %}">
                   <a href="{{ image.src | img_url: product_image_size }}" data-zoom="{{ image.src | img_url: '1024x1024' }}" class="product-single__thumbnail product-single__thumbnail-{{ section.id }}">
                     <img src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
                   </a>

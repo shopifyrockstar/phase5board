@@ -541,6 +541,18 @@ slate.Variants = (function() {
         variant_barcode = variant_data_object[variant_order];
         $('#barcode').val(variant_barcode);
       }
+
+      $('.hide-thumbs .product-single__thumbnail-item').each(function(){
+        $(this).removeClass("hide-thumb").removeClass("show-thumb");
+        // console.log(variant.title);
+        var image_alt_text = $(this).find("img").attr('alt');
+        var selected_variant_title = variant.title;
+        if ( selected_variant_title == image_alt_text ){
+          $(this).addClass("show-thumb");
+        }else{
+          $(this).addClass("hide-thumb");
+        }
+      })
       
       if (this.enableHistoryState) {
         this._updateHistoryState(variant);
