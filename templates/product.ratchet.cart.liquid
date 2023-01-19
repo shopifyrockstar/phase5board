@@ -3,12 +3,29 @@
 {{product.metafields.shogun.above}}
 {% comment %}
   The contents of the product.liquid template can be found in /sections/product-template.liquid
-{% endcomment %}
-{% include 'breadcrumbs', content: product %}
 
-{% section 'product-template-2' %}
+{% include 'breadcrumbs', content: product %}
+{% endcomment %}
+
+<div class="top-banner-wrapper">
+  <img class="desktop-show" src="https://cdn.shopify.com/s/files/1/0070/1582/files/hero-23ratchet.jpg?v=1663787954">  
+  <img class="mobile-show" src="https://cdn.shopify.com/s/files/1/0070/1582/files/hero-mobile-23ratchet.jpg?v=1663787950">  
+  
+</div>
+
+{% section 'product-template-3' %}
 
 {% section 'recommend-products' %}
+
+
+{% comment %} {% if collection %}
+  <div class="full-width full-width--return-link">
+    <a href="{{ collection.url }}" class="h1 return-link">
+      {% include 'icon-arrow-thin-left' %}
+      {{ 'products.product.collection_return' | t: collection: collection.title }}
+    </a>
+  </div>
+{% endif %} {% endcomment %}
 
 <script>
   // Override default values of shop.strings for each template.
@@ -21,212 +38,6 @@
   }
 </script>
 
-<div class="additional-content-wrapper">
-  <div class="additional-slider-wrapper">    
-    <div class="additional-slider">
-      <img class="slider-image" src="{{ 'ratchet-1-1.png' | asset_img_url:'master' }}">
-      <img class="slider-image" src="{{ 'ratchet-1-2.png' | asset_img_url:'master' }}">
-    </div>
-    <div class="additional-slider">
-      <img class="slider-image" src="{{ 'ratchet-2-1.png' | asset_img_url:'master' }}">
-      <img class="slider-image" src="{{ 'ratchet-2-2.png' | asset_img_url:'master' }}">
-    </div>
-    <div class="additional-slider">
-      <img class="slider-image" src="{{ 'ratchet-3-1.png' | asset_img_url:'master' }}">
-      <img class="slider-image" src="{{ 'ratchet-3-2.png' | asset_img_url:'master' }}">
-    </div>
-  </div>
-  <div class="additional-details-wrapper">
-    <h1 class="main-title">BOARD DETAILS</h1>
-    <div class="item-list-wrapper">
-      <div class="content-wrapper">
-        <div class="item-left-wrapper item-wrapper">
-          <img src="{{ 'ratchet-left.png' | asset_img_url:'master' }}">
-        </div>
-        <div class="item-right-wrapper item-wrapper">
-         {% comment %} {{product.metafields.board_details.right_html}}  {% endcomment %}
-          
-          <img src="{{ 'shrimp-right.png' | asset_img_url:'master' }}">
-          <img src="{{ 'ratchet-right-2.png' | asset_img_url:'master' }}">
 
-          <p><strong style="box-sizing: border-box; font-weight: 700;"><span style="color: rgb(227, 15, 0);">CONSTRUCTION FEATURES:</span></strong></p><span style="color: rgb(227, 15, 0);">
+{% comment %} {{product.metafields.shogun.below}} {% endcomment %}
 
-          </span>
-
-          <p>&bull; E-Glass&trade; Wrap
-            <br style="">&bull; 3/4&rdquo; Thick
-            <br style="">&bull; Composilite&trade; Construction
-            <br style="">&bull; Continuous Core
-            <br style="">&bull; Polyester Resin
-            <br style="">&bull; Single Fin Setup
-            <br style="">&bull; TuffCoat&trade; Gloss
-            <br style="">&bull; Resin Art
-            <br style="">&bull; SuperDura&trade; Bottom
-            <br style="">&bull; Footstrap Inserts</p>
-
-          <p><strong style="box-sizing: border-box; font-weight: 700;"><span style="color: rgb(227, 15, 0);">FIN SETUP:</span></strong></p>
-
-          <p>&bull; (1) 2&rdquo; Tail Fin</p>
-
-          <p><strong style="box-sizing: border-box; font-weight: 700;"><span style="color: rgb(227, 15, 0);">PAD:</span></strong></p>
-
-          <p>&bull; Standard Skim + P5 Techno Grip&trade; Traction v2</p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="additional-specs-wrapper">
-    <h1 class="main-title">BOARD & RIDER SPECS</h1>
-    <div class="table-wrapper">
-      <table class="table">
-        <thead class="table-column-container">
-          <tr>
-            <td class="table-column">
-              LENGTH
-            </td>
-
-            <td class="table-column">
-              WIDTH
-            </td>
-
-            <td class="table-column">
-              THICKNESS
-            </td>
-
-            <td class="table-column">
-              VOLUME
-            </td>
-
-            <td class="table-column">
-              WEIGHT LIMIT
-            </td>
-
-            <td class="table-column">
-              HEIGHT RANGE
-            </td>
-
-            <td class="table-column">
-              SCREWS
-            </td>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr class="table-row-container">
-            <td class="table-row">
-              <div class="shg-c  ">
-                <div class="shg-rich-text shg-theme-text-content">
-
-                  <p style="text-align: center;">54&quot;</p>
-                </div>
-
-              </div>
-
-            </td>
-
-            <td class="table-row">
-              <div class="shg-c  ">
-                <div class="shg-rich-text shg-theme-text-content">
-
-                  <p style="text-align: center;">20.3&quot;</p>
-                </div>
-
-              </div>
-
-            </td>
-
-            <td class="table-row">
-              <div class="shg-c  ">
-                <div class="shg-rich-text shg-theme-text-content">
-
-                  <p style="text-align: center;">3/4&quot;</p>
-                </div>
-
-              </div>
-
-            </td>
-
-            <td class="table-row">
-              <div class="shg-c  ">
-                <div class="shg-rich-text shg-theme-text-content">
-
-                  <p style="text-align: center;">10L</p>
-                </div>
-
-              </div>
-
-            </td>
-
-            <td class="table-row">
-              <div class="shg-c  ">
-                <div class="shg-rich-text shg-theme-text-content">
-
-                  <p style="text-align: center;">190 lbs.</p>
-                </div>
-
-              </div>
-
-            </td>
-
-            <td class="table-row">
-              <div class="shg-c  ">
-                <div class="shg-rich-text shg-theme-text-content">
-
-                  <p style="text-align: center;">5'4" – 6'2"</p>
-                </div>
-
-              </div>
-
-            </td>
-
-            <td class="table-row">
-              <div class="shg-c  ">
-                <div class="shg-rich-text shg-theme-text-content">
-
-                  <p style="text-align: center;">1.25&quot;</p>
-                </div>
-
-              </div>
-
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="additional-overview-wrapper">
-    <h1 class="main-title">BOARD OVERVIEW</h1>
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/ov03a0UelPo?autoplay=1&loop=1&mute=1" allowfullscreen></iframe>
-    </div>
-  </div>
-  <div class="product-review-widget-wrapper">
-    <h1 class="main-title">REVIEWS</h1>
-    <div class="yotpo yotpo-main-widget"
-      data-product-id="{{ product.id }}"
-      data-name="{{ product.title | escape }}"
-      data-url="{{ shop.url }}{{ product.url }}"
-      data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
-      data-price="{{ variant.price | money_without_currency }}"
-      data-currency="{{ shop.currency }}"
-      data-description="{{ product.description | escape }}">
-      </div>
-  </div>
-  <div class="additional-shrimp-wrapper">
-    <h1 class="main-title">#P5RATCHET</h1>
-    <div class="instafeed-text-wrapper">
-      <p style="text-align: center;">Follow us on Instagram <a href="https://www.instagram.com/phase5wakesurfers/" rel="noopener" target="_blank">@phase5wakesurfers</a> and tag your posts riding your Phase 5 Board to be featured!</p>
-    </div>    
-    <covet-pics-widget gallery-embed-id="67169"></covet-pics-widget>
-  </div>
-</div>
-
-{% if collection %}
-  <div class="full-width full-width--return-link">
-    <a href="{{ collection.url }}" class="h1 return-link">
-      {% include 'icon-arrow-thin-left' %}
-      {{ 'products.product.collection_return' | t: collection: collection.title }}
-    </a>
-  </div>
-{% endif %}

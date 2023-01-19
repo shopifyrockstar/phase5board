@@ -677,13 +677,6 @@ a#scapl-geocode-btn{
   float: unset;
 }
 
-@media (max-width:749px){
-  .template-blog .main-content .grid .grid__item{
-    width:100%;
-    padding-left: 20px;
-  }
-}
-
 .hidden{
   display:none;
 }
@@ -694,6 +687,18 @@ a#scapl-geocode-btn{
 .hide-thumbs .show-thumb{
   display: block;
 }
+
+@media (max-width:749px){
+  .template-blog .main-content .grid .grid__item{
+    width:100%;
+    padding-left: 20px;
+  }
+  .hide-thumbs .show-thumb{
+    display: inline-block;
+  }
+}
+
+
 
 
 
