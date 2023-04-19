@@ -15,28 +15,19 @@ This file can be re-written at any time.
 <head>
   
 
+<!-- Global site tag (gtag.js) - Google Ads: 416165411 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-416165411"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-416165411', {'allow_enhanced_conversions': true});
+</script>
     <!-- Zoho Web Assistant -->
     <script>var w=window;var p = w.location.protocol;if(p.indexOf("http") < 0){p = "http"+":";}var d = document;var f = d.getElementsByTagName('script')[0],s = d.createElement('script');s.type = 'text/javascript'; s.async = false; if (s.readyState){s.onreadystatechange = function(){if (s.readyState=="loaded"||s.readyState == "complete"){s.onreadystatechange = null;try{loadwaprops("3z4fd2e336470ae5ad72b6e0fc91d4aef3","3z8a6a3ded6033628251b774ff0ffa2a0f","3z5c26525d1d312448a60f48f326f216c98870eb963c557b2784c0fe69d39ac46d","3ze3b18681489655dba2af2f2a8d7a072ddf0a4eec135e635b064e24612fde9632","0.0");}catch(e){}}};}else {s.onload = function(){try{loadwaprops("3z4fd2e336470ae5ad72b6e0fc91d4aef3","3z8a6a3ded6033628251b774ff0ffa2a0f","3z5c26525d1d312448a60f48f326f216c98870eb963c557b2784c0fe69d39ac46d","3ze3b18681489655dba2af2f2a8d7a072ddf0a4eec135e635b064e24612fde9632","0.0");}catch(e){}};};s.src =p+"//ma.zoho.com/hub/js/WebsiteAutomation.js";f.parentNode.insertBefore(s, f);</script>
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-416165411"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'AW-416165411');
-    </script>
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5727075-2"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-5727075-2');
-    </script>
+   
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -152,6 +143,19 @@ This file can be re-written at any time.
 
   
 <!--DOOFINDER-SHOPIFY--> {% if content_for_header contains 'doofinder-installed.js' %} {% render 'doofinder-script-tag' %} {% endif %} <!--/DOOFINDER-SHOPIFY-->
+    <script>
+      {% if template contains 'product' %}
+      var variant_data_object = { {% for variant in product.variants %}variant_{{ variant.id }}:'{{ variant.metafields.custom.variant_barcode }}'{% unless forloop.last == true %},{% endunless %} {% endfor %} }          
+      {% else %}
+      var variant_data_object ={};
+      {% endif %}
+      var variant_barcode;
+    </script>
+    <!--DOOFINDER-SHOPIFY--> {% if content_for_header contains 'doofinder-installed.js' %} {% render 'doofinder-script-tag' %} {% endif %} <!--/DOOFINDER-SHOPIFY-->
+    
+    
+     {% include 'sca.storelocator' %}
+    
 </head>
 
 

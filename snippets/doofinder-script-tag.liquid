@@ -63,7 +63,11 @@ document.addEventListener('doofinder.cart.add', function(event) {
       sections: "cart-items,cart-icon-bubble,cart-live-region-text,cart-footer"
     }
 
-    fetch(window.Shopify.routes.root + 'cart/add.js', {
+    const route = window.Shopify.routes.root ?
+      window.Shopify.routes.root + 'cart/add.js' :
+      window.Shopify.routes.cart_url + '/add.js' ;
+
+    fetch(route, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
