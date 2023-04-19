@@ -23,7 +23,7 @@
     "type_nav_transform": true,
     "product_images_padding": true,
     "product_vendor_enable": false,
-    "seprate_products": "board-bags,apparel-sale, spf-protection, tees, hats, ropes, long-sleeve, ladies-apparel, fins, vests, 2023-vests, hats, bogo-apparel-sale, 3d-fins",
+    "seprate_products": "valentines-day-sale,board-bags,apparel-sale, spf-protection, tees, hats, ropes, long-sleeve, ladies-apparel, fins, vests, 2023-vests, hats, bogo-apparel-sale, 3d-fins, board-shorts, spring-sale-bogo-apparel",
     "social_facebook_link": "https:\/\/www.facebook.com\/phase5boards",
     "social_twitter_link": "https:\/\/twitter.com\/phase5boards",
     "social_pinterest_link": "",
@@ -163,8 +163,8 @@
           "logo_max_width": "125",
           "main_linklist": "2018-main-nav",
           "promo_bar_enable": false,
-          "promo_bar_text": "We are closed Dec. 19-30 | Happy Holidays from our crew to yours!",
-          "promo_bar_link": ""
+          "promo_bar_text": "Shop the spring BOGO apparel sale!",
+          "promo_bar_link": "shopify:\/\/collections\/spring-sale-bogo-apparel"
         }
       },
       "featured-products-subsection": {

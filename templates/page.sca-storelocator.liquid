@@ -100,7 +100,6 @@ if("undefined"==typeof Handlebars&&"function"==typeof define&&define.amd){var sc
         <div id="scasl-direction" class="scasl-field"><a href="https://maps.google.com/maps?saddr={{origin}}&amp;daddr={{address}} {{address2}} {{city}}, {{state}} {{postal}}" target="_blank">Directions</a></div>
         {{/if}}
 	</div>
-
 	{{#if store_image}}
 	<div id="scasl-store_image" class="scasl-info-image scasl-field">
 		<img src="{{store_image}}" />
@@ -110,7 +109,6 @@ if("undefined"==typeof Handlebars&&"function"==typeof define&&define.amd){var sc
 {{/location}}
 {%endraw%}
 </script>
-
 <script id="scasl-list-template" type="text">
 {%raw%}
 {{#location}}
@@ -154,4 +152,3 @@ if("undefined"==typeof Handlebars&&"function"==typeof define&&define.amd){var sc
 </script>
   <p> Are you a Authorized Phase 5 Dealer, and not located on this map? Please fill out this online form by clicking <a href="/pages/store-locator-information" target="_blank"><b>here</b></a>.</p>
 </div>  
-
