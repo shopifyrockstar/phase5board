@@ -10,6 +10,17 @@
 
 {% section 'recommend-products' %}
 
+{% if product.handle == 'phase-five-gofoil-package' %}
+  <div class="overview-wrapper">
+    <div class="title-wrapper">
+      <h1>FOIL OVERVIEW</h1>
+      <hr class="red">
+    </div>
+    <div class="video-wrapper">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/QHrzAhvByQU?start=394" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+{% endif %}
 
 {% if collection %}
   <div class="full-width full-width--return-link">
